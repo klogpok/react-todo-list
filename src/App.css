@@ -1,33 +1,123 @@
-.App {
-  text-align: center;
+@import 'theme/reset.css';
+@import '../src/theme/palette.css';
+
+
+.scheduler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 4%;
+    user-select: none;
+    min-height: 100vh;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.scheduler main {
+    width: 100%;
+    max-width: 950px;
+    height: 100%;
+    padding: 50px 85px;
+    background-color: var(--paletteColor4);
+    border-radius: 10px;
+    box-shadow: 6px 6px 14px var(--rgbaColor2);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.scheduler header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 45px;
 }
 
-.App-link {
-  color: #61dafb;
+.scheduler header span {
+    text-align: center;
+    line-height: 32px;
+    font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input {
+    height: 42px;
+    padding: 0 14px;
+    caret-color: var(--paletteColor3);
+    border-radius: 5px;
+    border: 1px solid var(--paletteColor6);
+    outline: none;
+    transition: border-color 0.1s ease-in-out;
+    background-color: var(--paletteColor2);
+    font-size: 20px;
+    text-overflow: ellipsis;
+}
+
+input::placeholder {
+    font-size: 20px;
+    transition: color 0.1s ease-in-out;
+    color: var(--paletteColor6);
+}
+
+input:focus {
+    border-color: var(--paletteColor3);
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+.scheduler h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--paletteColor5);
+}
+
+.scheduler input {
+    width: 215px;
+    height: 42px !important;
+    background-image: url('theme/assets/search-icon.svg');
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 95% 50%;
+}
+
+.scheduler-list {
+    margin-bottom: 31px;
+}
+
+.scheduler-list form {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 13px;
+}
+
+.scheduler-list input[type='text'] {
+    width: 100%;
+    margin-right: 22px;
+    background-image: none;
+}
+
+.scheduler-list button {
+    min-width: 215px;
+    height: 42px;
+    border-radius: 5px;
+    background-color: var(--paletteColor3);
+    font-size: 18px;
+    padding-left: 25px;
+    color: var(--paletteColor2);
+    border: 0;
+    cursor: pointer;
+    background-image: url('theme/assets/plus-icon.svg');
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 6% 50%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.scheduler-list button:hover {
+    background-color: var(--paletteColor11);
+}
+
+.scheduler ul {
+    min-height: 370px;
+    max-height: 370px;
+    overflow: scroll;
+}
+
+.scheduler ul::-webkit-scrollbar {
+    display: none;
 }
