@@ -13,9 +13,9 @@
 
 .scheduler main {
     width: 100%;
-    max-width: 950px;
+    max-width: 750px;
     height: 100%;
-    padding: 50px 85px;
+    padding: 40px 75px;
     background-color: var(--paletteColor4);
     border-radius: 10px;
     box-shadow: 6px 6px 14px var(--rgbaColor2);

@@ -2,15 +2,21 @@ import React, { Component } from 'react';
 import './App.css';
 
 import TodoList from './components/TodoList';
+
+// Instruments
 import uuid from 'uuid/v1';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+library.add(faStar);
 
 class App extends Component {
   state = {
     todos: [
-      {id: uuid(), text: 'Todo 1'},
-      {id: uuid(), text: 'Todo 2'},
-      {id: uuid(), text: 'Todo 3'},
-      {id: uuid(), text: 'Todo 4'},
+      {id: uuid(), text: 'Todo 1', isFavorite: false},
+      {id: uuid(), text: 'Todo 2', isFavorite: false},
+      {id: uuid(), text: 'Todo 3', isFavorite: false},
+      {id: uuid(), text: 'Todo 4', isFavorite: false},
     ],
     currentTextInput: ''
   };
@@ -29,6 +35,18 @@ class App extends Component {
       const newTodo = this.createTodoItem(this.state.currentTextInput);
       this.setState({todos: [newTodo, ...this.state.todos], currentTextInput: ''});
     }
+  };
+
+  updateItemFavoriteStatus = (id: string) => {
+    const updatedTodos = this.state.todos.map(todo => {
+      if(todo.id === id) {
+        return {...todo, isFavorite: !todo.isFavorite};
+      } else {
+        return todo;
+      }
+    });
+    this.setState({todos: updatedTodos});
+    console.log(id);
   };
 
 
@@ -52,7 +70,7 @@ class App extends Component {
                 <button type="submit">Add New Todo</button>
               </form>
               <div>
-                <TodoList todoItems={this.state.todos}/>
+                <TodoList todoItems={this.state.todos} updateItemFavoriteStatus = {this.updateItemFavoriteStatus}/>
               </div>
             </section>
             <footer>Footer
