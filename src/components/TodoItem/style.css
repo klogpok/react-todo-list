@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 61px;
+    height: 45px;
     margin-bottom: 13px;
     padding: 0 20px;
     background-color: var(--paletteColor2);
@@ -32,4 +32,15 @@
     display: flex;
     align-items: center;
     margin-right: 1.9rem;
+}
+
+.todo .actions {
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+}
+
+.todo .actions div {    
+    margin-left: 20px;
+    transition: all 1s ease;
 }
