@@ -121,3 +121,18 @@ input:focus::placeholder {
 .scheduler ul::-webkit-scrollbar {
     display: none;
 }
+
+footer {
+    display: flex;
+    font-size: 1.2rem;
+}
+
+footer .todos-filter {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+footer .todos-filter span {
+    margin-right: 10px;
+}

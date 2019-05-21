@@ -13,6 +13,6 @@ export default class TodoList extends Component {
         deleteTodoItem={this.props.deleteTodoItem}
       />
     ));
-    return <ul>{todoItems}</ul>;
+    return <ul> {todoItems}</ul>;
   }
 }
